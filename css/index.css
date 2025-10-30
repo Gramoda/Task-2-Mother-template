@@ -5,7 +5,7 @@
   --primary-background-red-color: #7F3E41;
   --primary-font-color-white: #fff;
   --primary-font-color-black: #000;
-  --container-width: 1175px;
+  --container-width: 1127px;
   --container-padding-x: 0px;
   --border-radius: 1000px;
   --input-height: 35px;
@@ -123,12 +123,14 @@ body {
   justify-content: space-between;
   gap: 120px;
   flex-direction: row;
+  align-items: center;
 }
 
 .motherhood-description__left-part {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 26px;
+  max-width: 513px;
 }
 
 .motherhood-description__title {
@@ -136,6 +138,7 @@ body {
   font-family: var(--font-family-base);
   font-weight: 600;
   color: var(--primary-font-color-black);
+  line-height: 1.2;
 }
 
 .motherhood-description__right-part{
@@ -143,8 +146,7 @@ body {
 }
 
 .motherhood-description__img {
-  width: 463px;
-  object-fit: cover;
+  border-radius: 16px;
 }
 
 .header__container {
@@ -164,7 +166,7 @@ body {
   color: var(--primary-font-color-white);
   text-align: left;
   line-height: 1.2;
-  letter-spacing: 3px;
+  letter-spacing: 0px;
 }
 
 .hero__subtitle {
@@ -173,4 +175,115 @@ body {
   font-size: 80px;
   color: var(--primary-font-color-white);
   font-style: italic;
+  padding-left: 70px;
+}
+
+.motherhood-description__link {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  font-size: 16px;
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  color: var(--primary-font-color-black);
+}
+
+.tips-for-mom__title {
+  font-size: 32px;
+  font-family: var(--font-family-base);
+  font-weight: 800;
+  margin-bottom: 28px;
+  color: #111;
+}
+
+.tips-for-mom__list {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.tips-for-mom__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 21px;
+  
+
+  grid-template-areas: "large-area small-area";
+}
+
+
+.tips-for-mom__left-part {
+  grid-area: large-area;
+}
+
+.tips-for-mom__right {
+  grid-area: small-area;
+}
+
+.tips-for-mom__content--reversed {
+  grid-template-areas: "small-area large-area";
+}
+
+.tips-for-mom__card {
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tips-for-mom__card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.tips-for-mom__card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 9px;
+}
+
+.tips-for-mom__card-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+
+}
+
+.tips-for-mom__card--large {
+  grid-row: span 2;
+}
+
+.tips-for-mom__right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 21px;
+}
+
+.tips-for-mom_button-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.generic-button {
+  padding-inline: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--primary-background-red-color);
+  color: var(--primary-font-color-white);
+  border-radius: 1000px;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  justify-self: center;
+}
+
+.tips-for-mom__button {
+  letter-spacing: 1.1px;
 }
