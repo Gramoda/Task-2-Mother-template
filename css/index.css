@@ -1,8 +1,8 @@
 @import "./style.css";
 
 :root {
-  --primary-background-white-color: #F0EFEE;
-  --primary-background-red-color: #7F3E41;
+  --primary-background-white-color: #f0efee;
+  --primary-background-red-color: #7f3e41;
   --primary-font-color-white: #fff;
   --primary-font-color-black: #000;
   --container-width: 1127px;
@@ -11,8 +11,8 @@
   --input-height: 35px;
   --input-border-color: #fff;
   --primary-font-size: 16px;
-  --font-family-base: 'Inter', sans-serif;
-  --font-family-title: 'Montserrat', sans-serif;
+  --font-family-base: "Inter", sans-serif;
+  --font-family-title: "Montserrat", sans-serif;
 }
 
 body {
@@ -29,8 +29,39 @@ body {
   padding-inline: var(--container-padding-x);
 }
 
+.main__section {
+  padding-top: 80px;
+  margin-bottom: 80px;
+}
+
+.main__section:last-child {
+  padding-bottom: 80px;
+  margin-bottom: 0px;
+}
+
+.main__button-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.generic-button {
+  padding-inline: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--primary-background-red-color);
+  color: var(--primary-font-color-white);
+  border-radius: 1000px;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  justify-self: center;
+}
+
 .welcome-wrapper {
-  background-image: url('../img/priscilla-du-preez-I-zSrQnLlX0-unsplash.jpg');
+  background-image: url("../img/priscilla-du-preez-I-zSrQnLlX0-unsplash.jpg");
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -40,7 +71,15 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: space-between;
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 55px;
+  min-height: 69px;
 }
 
 .header__menu {
@@ -48,14 +87,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   grid-column: 2;
-}
-
-.header__right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 22px;
-  grid-column: 3;
 }
 
 .header__menu-list {
@@ -76,13 +107,20 @@ body {
   font-family: var(--font-family-base);
 }
 
-.header__container {
+.header__right {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 55px;
-  min-height: 69px;
+  gap: 22px;
+  grid-column: 3;
+}
+
+.header__search-link {
+  text-decoration: none;
+  color: var(--primary-font-color-white);
+  font-size: var(--primary-font-size);
+  font-family: var(--font-family-base);
+  padding: 0 16px;
 }
 
 .header__menu-button {
@@ -101,21 +139,25 @@ body {
   border: none;
 }
 
-.header__search-link {
-  text-decoration: none;
+.hero {
+  margin-top: auto;
+  margin-bottom: 150px;
+  font-size: 40px;
+  font-family: var(--font-family-title);
+  font-weight: 800;
   color: var(--primary-font-color-white);
-  font-size: var(--primary-font-size);
-  font-family: var(--font-family-base);
-  padding: 0 16px;
+  text-align: left;
+  line-height: 1.2;
+  letter-spacing: 0px;
 }
 
-.main__section {
-  padding-top: 80px;
-  margin-bottom: 80px;
-}
-
-.main__section:last-child {
-  margin-bottom: 0px;
+.hero__subtitle {
+  font-weight: 300;
+  font-family: var(--font-family-title);
+  font-size: 80px;
+  color: var(--primary-font-color-white);
+  font-style: italic;
+  padding-left: 70px;
 }
 
 .motherhood-description__content {
@@ -141,43 +183,6 @@ body {
   line-height: 1.2;
 }
 
-.motherhood-description__right-part{
-  
-}
-
-.motherhood-description__img {
-  border-radius: 16px;
-}
-
-.header__container {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 0 55px;
-  min-height: 69px;
-}
-
-.hero {
-  margin-top: auto;
-  margin-bottom: 150px;
-  font-size: 40px;
-  font-family: var(--font-family-title);
-  font-weight: 800;
-  color: var(--primary-font-color-white);
-  text-align: left;
-  line-height: 1.2;
-  letter-spacing: 0px;
-}
-
-.hero__subtitle {
-  font-weight: 300;
-  font-family: var(--font-family-title);
-  font-size: 80px;
-  color: var(--primary-font-color-white);
-  font-style: italic;
-  padding-left: 70px;
-}
-
 .motherhood-description__link {
   text-decoration: underline;
   text-underline-offset: 10px;
@@ -185,6 +190,13 @@ body {
   font-family: var(--font-family-base);
   font-weight: 600;
   color: var(--primary-font-color-black);
+}
+
+.motherhood-description__right-part {
+}
+
+.motherhood-description__img {
+  border-radius: 16px;
 }
 
 .tips-for-mom__title {
@@ -207,11 +219,12 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 21px;
-  
-
   grid-template-areas: "large-area small-area";
 }
 
+.tips-for-mom__content--reversed {
+  grid-template-areas: "small-area large-area";
+}
 
 .tips-for-mom__left-part {
   grid-area: large-area;
@@ -219,10 +232,9 @@ body {
 
 .tips-for-mom__right {
   grid-area: small-area;
-}
-
-.tips-for-mom__content--reversed {
-  grid-template-areas: "small-area large-area";
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 21px;
 }
 
 .tips-for-mom__card {
@@ -250,40 +262,388 @@ body {
   font-size: 16px;
   color: #666;
   margin-bottom: 0;
-
 }
 
 .tips-for-mom__card--large {
   grid-row: span 2;
 }
 
-.tips-for-mom__right {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 21px;
-}
-
-.tips-for-mom_button-wrapper {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.generic-button {
-  padding-inline: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  background-color: var(--primary-background-red-color);
-  color: var(--primary-font-color-white);
-  border-radius: 1000px;
-  cursor: pointer;
-  font-family: var(--font-family-base);
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  justify-self: center;
-}
-
 .tips-for-mom__button {
   letter-spacing: 1.1px;
+}
+
+.short-tips {
+  background-color: var(--primary-background-red-color);
+}
+
+.short-tips__title {
+  font-size: 32px;
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  color: var(--primary-font-color-white);
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.short-tips__list {
+  display: flex;
+  flex-direction: row;
+  gap: 23px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.list__card {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--primary-font-color-black);
+  padding: 24px;
+  max-width: 360px;
+  border-radius: 16px;
+}
+
+.list__svg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #7f3e41;
+  background-color: #f1e9e9;
+  width: 70px;
+  height: 70px;
+}
+
+.list__card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list__card-text {
+  line-height: 22px;
+}
+
+.short-tips__button {
+  background-color: white;
+  color: #7f3e41;
+}
+
+.contact-section {
+  background-color: #7f3e41;
+  color: #fff;
+}
+
+.contact-section__title {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: var(--font-family-base);
+  margin-bottom: 30px;
+}
+
+.contact-section__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  margin-bottom: 80px;
+}
+
+.contact-section__form-wrapper {
+  flex: 1;
+  min-width: 600px;
+}
+
+.contact-form__title {
+  font-size: 24px;
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-form__subtitle {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.contact-form__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 26px;
+}
+
+.contact-form__group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.contact-form__group--full {
+  flex-basis: 100%;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  padding-bottom: 14px;
+  font-size: 16px;
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  width: 100%;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  outline: none;
+  border-bottom-color: #ffffff;
+}
+
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: #fff;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 105px;
+}
+
+.contact-form__footer {
+  text-align: right;
+  margin-top: 48px;
+  font-size: 16px;
+  padding-right: 27px;
+}
+
+.contact-form__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.contact-form__link:hover {
+  text-decoration: underline;
+}
+
+.contact-section__info-wrapper {
+  flex: 1;
+  min-width: 280px;
+  border-left: 1px solid #f2f2f2;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-card__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.info-card__text {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.info-card__detail {
+  color: #f2f2f2;
+  font-weight: 700;
+  font-size: 1rem;
+  display: block;
+}
+
+.info-card__detail--link {
+  text-decoration: none;
+}
+
+.info-card__detail--link:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  background-color: #7f3e41;
+  color: #fff;
+  padding: 56px 0;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.86fr 1fr 1fr;
+  gap: 0px;
+}
+
+.site-footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.site-footer__column--last {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.site-footer__heading {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.site-footer__title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.site-footer__contact {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.site-footer__label {
+  font-weight: bold;
+}
+
+.site-footer__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer__nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.site-footer__nav-link:hover {
+  text-decoration: underline;
+}
+
+.site-footer__social {
+  padding-right: 33px;
+}
+
+.site-footer__social-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.site-footer__social-link:first-child {
+  margin-right: 8px;
+}
+
+.site-footer__social-link:hover {
+  color: #cccccc;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-inline: 20px;
+  }
+
+  .header__container {
+    padding: 0 20px;
+  }
+
+  .header__menu-list {
+    gap: 20px;
+  }
+
+  .hero__subtitle {
+    font-size: 60px;
+    padding-left: 40px;
+  }
+
+  .motherhood-description__content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .motherhood-description__left-part {
+    max-width: 100%;
+  }
+
+  .motherhood-description__img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__menu {
+    display: none;
+  }
+
+  .header__right .header__search-link {
+    display: none;
+  }
+
+  .header__container {
+    grid-template-columns: 1fr auto;
+    padding: 0 20px;
+  }
+
+  .header__right {
+    grid-column: 2;
+    justify-content: flex-end;
+  }
+
+  .hero {
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .hero__subtitle {
+    font-size: 42px;
+    padding-left: 0;
+  }
+
+  .main__section {
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tips-for-mom__content,
+  .tips-for-mom__content--reversed {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "large-area"
+      "small-area";
+  }
+
+  .tips-for-mom__right {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .short-tips__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .list__card {
+    max-width: 100%;
+    width: 100%;
+  }
 }
