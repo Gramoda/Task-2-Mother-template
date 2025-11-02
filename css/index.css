@@ -552,6 +552,12 @@ body {
   color: #cccccc;
 }
 
+.contact-section__img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 @media (max-width: 1024px) {
   .container {
     padding-inline: 20px;
@@ -645,5 +651,9 @@ body {
   .list__card {
     max-width: 100%;
     width: 100%;
+  }
+
+  .contact-section__form-wrapper {
+    min-width: 100%;
   }
 }
