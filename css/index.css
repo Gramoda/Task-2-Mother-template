@@ -35,7 +35,7 @@ body {
 }
 
 .main__section:last-child {
-  padding-bottom: 80px;
+  padding-bottom: 75px;
   margin-bottom: 0px;
 }
 
@@ -67,7 +67,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  min-height: 870px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -149,6 +148,7 @@ body {
   text-align: left;
   line-height: 1.2;
   letter-spacing: 0px;
+  padding-left: 10px;
 }
 
 .hero__subtitle {
@@ -158,6 +158,22 @@ body {
   color: var(--primary-font-color-white);
   font-style: italic;
   padding-left: 70px;
+}
+
+.hero__scroll-wrapper {
+  position: absolute;
+  bottom: 44px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__scroll-link {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  display: block;
 }
 
 .motherhood-description__content {
@@ -351,6 +367,13 @@ body {
   margin-bottom: 40px;
 }
 
+.stories__card-wrapper {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .stories__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -380,24 +403,28 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   gap: 5px;
+  background: white;
+  padding-bottom: 22px;
 }
 
 .stories__card img {
   width: 100%;
   display: block;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 15px;
 }
 
 .stories__card-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  margin-top: 9px;
+  color: var(--primary-font-color-black);
 }
 
 .stories__card-subtitle {
   font-size: 16px;
   color: #666;
   margin-bottom: 0;
+  line-height: 1.66;
 }
 
 .stories__card--large {
@@ -424,7 +451,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 45px;
-  margin-bottom: 80px;
+  margin-bottom: 75px;
 }
 
 .contact-section__form-wrapper {
