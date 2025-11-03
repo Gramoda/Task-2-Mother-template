@@ -35,7 +35,7 @@ body {
 }
 
 .main__section:last-child {
-  padding-bottom: 75px;
+  padding-bottom: 80px;
   margin-bottom: 0px;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .welcome-wrapper {
-  background-image: url("../img/priscilla-du-preez-I-zSrQnLlX0-unsplash.jpg");
+  background-image: url("../img/priscilla-du-preez-I-zSrQnLlX0-unsplash.webp");
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -438,6 +438,7 @@ body {
 .contact-section {
   background-color: #7f3e41;
   color: #fff;
+  padding-top: 75px;
 }
 
 .contact-section__title {
@@ -692,6 +693,20 @@ body {
     max-width: 100%;
     height: auto;
   }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .stories__content {
+    gap: 15px;
+  }
+
+  .stories__card-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -758,5 +773,44 @@ body {
 
   .contact-section__form-wrapper {
     min-width: 100%;
+  }
+
+  .stories__content,
+  .stories__content--reversed {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "large-area"
+      "small-area";
+  }
+
+  .stories__right {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .site-footer__column--last {
+    align-items: flex-start;
+  }
+
+  .site-footer__social {
+    padding-right: 0;
+  }
+
+  .hero__scroll-wrapper {
+    bottom: 20px;
+  }
+
+  .hero__scroll-link svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero {
+    margin-bottom: 80px;
   }
 }
