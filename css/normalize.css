@@ -1,5 +1,5 @@
 /**
-  Нормализация блочной модели
+ * Box model normalization
  */
 *,
 ::before,
@@ -8,16 +8,14 @@
 }
 
 /**
-  Убираем внутренние отступы слева тегам списков,
-  у которых есть атрибут class
+ * Remove left padding from list elements that have class attribute
  */
 :where(ul, ol):where([class]) {
   padding-left: 0;
 }
 
 /**
-  Убираем внешние отступы body и двум другим тегам,
-  у которых есть атрибут class
+ * Remove margins from body and other elements that have class attribute
  */
 body,
 :where(blockquote, figure, fieldset):where([class]) {
@@ -25,21 +23,9 @@ body,
 }
 
 /**
-  Убираем внешние отступы вертикали нужным тегам,
-  у которых есть атрибут class
+ * Remove vertical margins from heading and text elements that have class attribute
  */
-:where(
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  dl
-):where([class]) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
   margin-block: 0;
 }
 
@@ -53,8 +39,7 @@ body,
 }
 
 /**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
+ * Remove default bullet points from unordered lists that have class attribute
  */
 :where(ul[class]) {
   list-style: none;
@@ -65,9 +50,8 @@ body,
 }
 
 /**
-  Обнуляем вертикальные внешние отступы параграфа,
-  объявляем локальную переменную для внешнего отступа вниз,
-  чтобы избежать взаимодействие с более сложным селектором
+ * Reset vertical margins for paragraphs,
+ * declare local variable for bottom margin to avoid conflicts with more complex selectors
  */
 p {
   --paragraphMarginBottom: 24px;
@@ -76,16 +60,15 @@ p {
 }
 
 /**
-  Внешний отступ вниз для параграфа без атрибута class,
-  который расположен не последним среди своих соседних элементов
+ * Bottom margin for paragraphs without class attribute
+ * that are not the last among their sibling elements
  */
 p:where(:not([class]):not(:last-child)) {
   margin-bottom: var(--paragraphMarginBottom);
 }
 
-
 /**
-  Упрощаем работу с изображениями и видео
+ * Simplify working with images and video
  */
 img,
 video {
@@ -95,7 +78,7 @@ video {
 }
 
 /**
-  Наследуем свойства шрифт для полей ввода
+ * Inherit font properties for form elements
  */
 input,
 textarea,
@@ -106,42 +89,41 @@ button {
 
 html {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
+   * Useful in most situations
+   * (for example, when you need to stick footer to the bottom of the page)
    */
   height: 100%;
   /**
-    Убираем скачок интерфейса по горизонтали
-    при появлении / исчезновении скроллбара
+   * Prevent layout shift when scrollbar appears/disappears
    */
   /* scrollbar-gutter: stable; */
   /**
-    Плавный скролл
+   * Smooth scrolling
    */
   scroll-behavior: smooth;
 }
 
 body {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
+   * Useful in most situations
+   * (for example, when you need to stick footer to the bottom of the page)
    */
   min-height: 100%;
   /**
-    Унифицированный интерлиньяж
+   * Unified line height
    */
   line-height: 1.5;
 }
 
 /**
-  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ * Normalize link element height when inspecting in DevTools
  */
 a:where([class]) {
   display: inline-flex;
 }
 
 /**
-  Курсор-рука при наведении на элемент
+ * Pointer cursor on hover for interactive elements
  */
 button,
 label {
@@ -149,45 +131,37 @@ label {
 }
 
 /**
-  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
+ * Remove gray tap highlight on mobile devices (iOS/Android)
  */
 button {
   -webkit-tap-highlight-color: transparent;
 }
 
 /**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут fill со значением 'none' или начинается с 'url')
+ * Standardize color for SVG elements with fill attribute
+ * (except those with fill="none" or fill starting with "url")
  */
-:where([fill]:not(
-  [fill="none"],
-  [fill^="url"]
-)) {
+:where([fill]:not([fill="none"], [fill^="url"])) {
   fill: currentColor;
 }
 
 /**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут stroke со значением 'none')
+ * Standardize color for SVG elements with stroke attribute
+ * (except those with stroke="none" or stroke starting with "url")
  */
-:where([stroke]:not(
-  [stroke="none"],
-  [stroke^="url"]
-)) {
+:where([stroke]:not([stroke="none"], [stroke^="url"])) {
   stroke: currentColor;
 }
 
 /**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ * Fix color transition delay for SVG elements
  */
 svg * {
   transition-property: fill, stroke;
 }
 
 /**
-  Приведение рамок таблиц в классический 'collapse' вид
+ * Standardize table borders to classic 'collapse' style
  */
 :where(table) {
   border-collapse: collapse;
@@ -195,8 +169,8 @@ svg * {
 }
 
 /**
-  Удаляем все анимации и переходы для людей,
-  которые предпочитают их не использовать
+ * Remove all animations and transitions for users
+ * who prefer reduced motion
  */
 @media (prefers-reduced-motion: reduce) {
   *,

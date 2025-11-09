@@ -5,6 +5,9 @@
   --primary-background-red-color: #7f3e41;
   --primary-font-color-white: #fff;
   --primary-font-color-black: #000;
+  --primary-hover-color: #ff6347;
+  --secondary--hover-color: #7f3e41;
+  --transition-options: 0.3s ease-in-out;
   --container-width: 1127px;
   --container-padding-x: 0px;
   --border-radius: 1000px;
@@ -58,6 +61,12 @@ body {
   font-weight: 600;
   border: none;
   justify-self: center;
+  transition: var(--transition-options);
+}
+
+.generic-button:hover {
+  background-color: var(--primary-font-color-black);
+  color: var(--primary-font-color-white);
 }
 
 .welcome-wrapper {
@@ -134,8 +143,15 @@ body {
   font-family: var(--font-family-base);
   font-size: 14px;
   font-weight: 600;
+  min-width: 130px;
   height: 40px;
   border: none;
+  transition: var(--transition-options);
+}
+
+.header__menu-button-white:hover {
+  background-color: black;
+  color: white;
 }
 
 .hero {
@@ -174,6 +190,15 @@ body {
   color: white;
   cursor: pointer;
   display: block;
+}
+
+.hero__scroll-link svg {
+  transition: var(--transition-options);
+}
+
+.hero__scroll-link svg:hover {
+  background-color: var(--primary-background-red-color);
+  border-radius: 1000px;
 }
 
 .motherhood-description__content {
@@ -227,7 +252,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 38px;
-  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
@@ -662,11 +686,19 @@ body {
   display: block;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
   .container {
     padding-inline: 20px;
   }
 
+  .list__card {
+    max-width: none;
+    flex: 1 1;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
   .header__container {
     padding: 0 20px;
   }
@@ -769,6 +801,7 @@ body {
   .list__card {
     max-width: 100%;
     width: 100%;
+    min-width: 0;
   }
 
   .contact-section__form-wrapper {
